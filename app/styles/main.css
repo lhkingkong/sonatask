@@ -1,0 +1,173 @@
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #BAD1E8),
+    color-stop(1, #FCFCFC)
+  );
+  background-image: -o-linear-gradient(bottom, #BAD1E8 0%, #FCFCFC 100%);
+  background-image: -moz-linear-gradient(bottom, #BAD1E8 0%, #FCFCFC 100%);
+  background-image: -webkit-linear-gradient(bottom, #BAD1E8 0%, #FCFCFC 100%);
+  background-image: -ms-linear-gradient(bottom, #BAD1E8 0%, #FCFCFC 100%);
+  background-image: linear-gradient(to bottom, #BAD1E8 0%, #FCFCFC 100%);
+  background-repeat: repeat-x;
+  background-color: #FCFCFC;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.navbar-default{
+  box-shadow: 0 0 5px #9CB3CA;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 18px;
+  padding: 15px 45px;
+}
+.login .jumbotron {
+  box-shadow: 0 0 5px #9CB3CA;
+  color: #666 !important;
+  text-shadow:1px 1px 0 #FFF;
+  padding-bottom: 15px;
+}
+.login .jumbotron h2{
+  margin-top: 0 !important;
+  margin-bottom: 25px;
+  color: #3E556C;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+/* functional and new styles */
+.emptyTitle{
+  background-image: url(../images/emptyTask.png); 
+  min-width: 43px;
+  min-height: 40px;
+  background-repeat: no-repeat;
+  background-position: 7px 7px;
+}
+.emptyTask{
+  background-image: url(../images/emptyTask.png); 
+  min-width: 75px;
+  min-height: 30px;
+  background-repeat: no-repeat;
+  background-position: 0 -30px;
+}
+.emptyList{
+  background-image: url(../images/emptyTask.png); 
+  min-width: 71px;
+  min-height: 30px;
+  background-repeat: no-repeat;
+  background-position: 0 -60px;
+}
+#taskList {
+  padding: 0;
+}
+.newListOptions,
+#taskList li{
+  list-style: none;
+}
+.newListOptions div{
+  display: inline-block;
+  min-width: 71px;
+  min-height: 30px;
+}
+.taskCreator .glyphicon-unchecked,
+.taskCreator .glyphicon-check,
+.modal .glyphicon-unchecked,
+.modal .glyphicon-check{
+  cursor: pointer;
+}
+.search{
+  text-align: center;
+}
+.search .form-control{
+  width: 90%;
+  display: inline-block;
+}
+.modal-footer > div,
+.panel-footer > div {
+  display: inline-block;
+}
+.clear{
+  clear: both;
+  margin-bottom: 10px;
+}
+.taskCreator .glyphicon,
+.editTask .glyphicon{
+  min-height: 14px;
+  min-width: 14px;
+}
+.itemHandle:hover:before{
+  content: "\e119";
+  cursor: move;
+}

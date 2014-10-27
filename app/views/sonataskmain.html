@@ -1,0 +1,34 @@
+<div id="sonataskMain">
+	<div class="panel-info search">
+		<div class="panel-heading form-group">
+			<span class="glyphicon glyphicon-search"></span>
+			<input type="text" ng-model="searchField" class="form-control" />
+		</div>
+	</div>
+	<div task-creator></div>
+	<div class="clear"></div>
+	<ul id="taskList">
+		<li ng-repeat="task in tasks | filter: searchField" class="panel panel-default sonaTask" id="sonaTask_{{task.id}}" position="{{task.position}}" ng-click="openEdit($event,task)">
+			<div class="panel-heading">
+				{{task.title}}
+				<button type="button" class="close" ng-click="removeTask($event,task)"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			</div>
+			<div ng-if="task.task_type == 0" class="panel-body" ng-bind-html="task.content"></div>
+			<div ng-if="task.task_type == 1" class="panel-body">
+				<ul>
+					<li ng-repeat="item in task.items">
+						<span class="glyphicon glyphicon-check" ng-if="item.checked"></span>
+						<span class="glyphicon glyphicon-unchecked" ng-if="!item.checked"></span>
+						{{item.content}}
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div task-editor task-to-edit="taskToEdit" ng-if="somethingToEdit"></div>
+	</div>
+
+</div>

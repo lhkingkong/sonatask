@@ -1,0 +1,21 @@
+<div class="newTask panel panel-default taskCreator">
+
+	<div  contenteditable="true" class="panel-heading" ng-model="title" ng-class="{emptyTitle:title==''}" strip-br="true" select-non-editable="true"></div>
+	<div  contenteditable="true" class="panel-body" ng-model="taskContent" ng-class="{emptyTask:taskContent==''}" ng-hide="isList" strip-br="true" select-non-editable="true"></div>
+	<div class="panel-body" ng-show="isList">
+		<ul id="createTaskList">
+			<li ng-repeat="option in newListOptions" class="newListOptions" id="createTaskList_{{$index}}">
+				<span class="glyphicon itemHandle" ng-hide="option.isNew"></span>
+				<span class="glyphicon glyphicon-check" ng-if="option.checked" ng-click="toggleCheck($event, option)"></span>
+				<span class="glyphicon glyphicon-unchecked" ng-if="!option.checked" ng-click="toggleCheck($event, option)"></span>
+				<div contenteditable="true" ng-model="option.text" ng-class="{emptyList:option.text==''}" ng-keyup="createNewItem($event, option)" strip-br="true" select-non-editable="true"></div>
+			</li>
+		</ul>
+	</div>
+	<div class="panel-footer navbar-right">
+		<div ng-show="showExpirationDate">Expiration Date <input type="text" class="expirationDate" ng-model="expDate"/></div>
+		<button class="btn btn-default btn-xs" ng-click="setTime($event)"><span class="glyphicon glyphicon-time"></span></button>
+		<button class="btn btn-default btn-xs" ng-click="toggleList($event)"><span class="glyphicon glyphicon-th-list"></span></button>
+		<button type="submit" class="btn btn-primary" ng-click="postIt($event)">Post it!</button>
+	</div>
+</div>

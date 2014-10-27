@@ -1,0 +1,27 @@
+<div class="modal-dialog editTask">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <div  contenteditable="true" class="panel-heading" ng-model="title" ng-class="{emptyTitle:title==''}" strip-br="true" select-non-editable="true"></div>
+	      </div>
+
+	      <div  contenteditable="true" class="modal-body" ng-model="taskContent" ng-class="{emptyTask:taskContent==''}" ng-hide="isList" strip-br="true" select-non-editable="true"></div>
+	      <div class="modal-body" ng-show="isList">
+			<ul id="editTaskList">
+				<li ng-repeat="option in newListOptions" class="newListOptions" id="editTaskList_{{$index}}">
+					<span class="glyphicon itemHandle" ng-hide="option.isNew"></span>
+					<span class="glyphicon glyphicon-check" ng-if="option.checked" ng-click="toggleCheck($event, option)"></span>
+					<span class="glyphicon glyphicon-unchecked" ng-if="!option.checked" ng-click="toggleCheck($event, option)"></span>
+					<div contenteditable="true" ng-model="option.content" ng-class="{emptyList:option.content==''}" ng-keyup="createNewItem($event, option)" strip-br="true" select-non-editable="true"></div>
+				</li>
+			</ul>
+		  </div>
+
+	      <div class="modal-footer">
+	        <div ng-show="showExpirationDate">Expiration Date <input type="text" class="expirationDate" ng-model="expDate"/></div>
+			<button class="btn btn-default btn-xs" ng-click="setTime($event)"><span class="glyphicon glyphicon-time"></span></button>
+			<button class="btn btn-default btn-xs" ng-click="toggleList($event)"><span class="glyphicon glyphicon-th-list"></span></button>
+	        <button type="button" class="btn btn-primary" ng-click="saveChanges($event)">Save changes</button>
+	      </div>
+	    </div>
+	</div>
