@@ -12,8 +12,8 @@ angular
   .module('sonataskApp', [
     'ngResource',
     'ngRoute',
-    'contenteditable',
-    'ngSanitize'
+    'ngSanitize',
+    'contenteditable'
   ])
   .config(['$routeProvider','$httpProvider',function ($routeProvider, $httpProvider) {
     $httpProvider.defaults.useXDomain = true;
